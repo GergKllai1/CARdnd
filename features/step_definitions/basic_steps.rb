@@ -22,3 +22,6 @@ Given("I am logged in as {string}") do |email|
     visit root_path
 end
 
+Given("I am on the profile page") do
+    pending # Write code here that turns the phrase above into concrete actions
+end
