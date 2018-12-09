@@ -31,3 +31,11 @@ body {
     background-color: orange;
     color: white;
 }
+
+.profile {
+    
+}
+
+.profile img {
+    border-radius: 50%;
+}
