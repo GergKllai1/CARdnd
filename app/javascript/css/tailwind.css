@@ -23,6 +23,7 @@ body {
 }
 .navbarlinks:hover{
     color: orange;
+    border-bottom: 1px solid black;
 }
 
 .indexlinks{
