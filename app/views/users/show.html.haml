@@ -28,22 +28,29 @@
                 %br
                 %span.indexlinks.inline-block.bg-grey-lighter.rounded.border.px-3.py-1.text-sm.font-semibold.text-grey-darker.mr-2.mt-4.mb-4=link_to 'Edit Profile', edit_user_registration_path
                 %span.indexlinks.inline-block.bg-grey-lighter.rounded.border.px-3.py-1.text-sm.font-semibold.text-grey-darker.mr-2.mt-4.mb-4=link_to "Add Car", new_automobile_path
-        - @user.automobile.each do |car|
-            .max-w-md.w-full.lg:flex
-                .mb-8{id: dom_id(car)}
-                    .text-black.font-bold.text-xl.mb-2= "#{car.brand} #{car.model}"
-                    %p.text-grey-darker.text-base0="Year: #{car.year}"
-                    %p.text-grey-darker.text-base="Price: #{car.price} SEK per day" 
-                    - if car.rental_status?
-                        Currently rented
-                    -else
-                        Available for rent
-                    %br
-                    =link_to "Edit", edit_automobile_path(car["id"])
-                    =link_to "Delete", automobile_path(car["id"]), method: :delete
+        .flex-flex.flex-wrap
+            - @user.automobile.each do |car|
+                .bg-grey-light.rounded-lg.w-75p.m-4.shadow-lg
+                    .w-full.h-25p.flex.flex-col.rounded.shadow-lg
                     - if car.image.attached?
-                        =image_tag car.image, {class: "w-64 h-64"}
-        .flex
+                        =image_tag car.image
+                    - else
+                        =image_tag "default.jpg"
+                    .border-transparent.lg.pl-2
+                        .mb-8{id: dom_id(car)}
+                            %h2.mt-3= "#{car.brand} #{car.model}"
+                            %br
+                            .rent_status.mt-3
+                                -if car.rental_status == true
+                                    %h4 Rented out
+                                -else
+                                    %h4 Available for rent
+                                %span.inline-block.bg-grey-lighter.rounded.border.px-3.py-1.text-sm.font-semibold.text-grey-darker.mr-2.mt-4="Price: #{car.price} SEK per day"
+                                %span.inline-block.bg-grey-lighter.rounded.border.px-3.py-1.text-sm.font-semibold.text-grey-darker.mr-2.mt-4="Year: #{car.year}"
+                                %br/
+                                %span.indexlinks.inline-block.bg-grey-lighter.rounded.border.px-3.py-1.text-sm.font-semibold.text-grey-darker.mr-2.mt-4= link_to "Edit", edit_automobile_path(car), {class: "indexlinks"}
+                                %span.indexlinks.inline-block.bg-grey-lighter.rounded.border.px-3.py-1.text-sm.font-semibold.text-grey-darker.mr-2.mt-4= link_to "Delete", automobile_path(car), {class: "indexlinks", method: :delete}
+        %d
             = render partial: 'partials/owner_history'
-        .div
+        %d
             = render partial: 'partials/renter_history' 
