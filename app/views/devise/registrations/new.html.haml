@@ -3,49 +3,49 @@
     .border.border-solid.w-30p.bg-grey-dark
         = form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f|
             = devise_error_messages!
-            .field
+            .field.ml-2
                 = f.label :email
                 %br/
                 = f.email_field :email, autofocus: true, autocomplete: "email"
-            .field
+            .field.ml-2
                 = f.label :password
             - if @minimum_password_length
                 %em
                 (#{@minimum_password_length} characters minimum)
                 %br/
                 = f.password_field :password, autocomplete: "new-password"
-            .field
+            .field.ml-2
                 = f.label :password_confirmation
                 %br/
                 = f.password_field :password_confirmation, autocomplete: "new-password"
-            .field
+            .field.ml-2
                 = f.label :first_name
                 %br/
                 = f.text_field :first_name, autocomplete: "first-name"
-            .field
+            .field.ml-2
                 = f.label :last_name
                 %br/
                 = f.text_field :last_name, autocomplete: "last-name"
-            .field
+            .field.ml-2
                 = f.label :address
                 %br/
                 = f.text_field :address, autocomplete: "address"
-            .field
+            .field.ml-2
                 = f.label :driving_age
                 %br/
                 = f.text_field :driving_age, autocomplete: "drivingage"
-            .field
+            .field.ml-2
                 = f.label :age
                 %br/
                 = f.text_field :age, autocomplete: "age"
-            .field
+            .field.ml-2
                 = f.label :about
                 %br/
                 = f.text_area :about, autocomplete: "about"
-            .field
+            .field.ml-2
                 = f.label :phone
                 %br/
                 = f.text_field :phone, autocomplete: "phone"
-            .button.shadow.bg-grey.hover.bg-grey-light.focus.shadow-outline.focus.outline-none.text-white.font-bold.py-2.px-4.rounded.mt-2
+            .button.shadow.bg-grey.hover.bg-grey-light.focus.shadow-outline.focus.outline-none.text-white.font-bold.py-2.px-4.rounded.mt-2.ml-2.mr-2
                 = f.submit "Sign up"
         = render "devise/shared/links"
