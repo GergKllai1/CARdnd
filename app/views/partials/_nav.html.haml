@@ -4,7 +4,7 @@
             %div{class: "#{flash_class(key)}"}
                 = value
     .nav_bar_links
-        = link_to "Home" , root_path
+        = link_to "Home" , root_path, {class: "navbarlinks"}
         -if user_signed_in?
             %p Hello, #{current_user.email}
             =link_to "View Profile", user_path(current_user), {class: "navbarlinks"}
