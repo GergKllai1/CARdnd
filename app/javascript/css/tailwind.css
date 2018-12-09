@@ -1,7 +1,6 @@
 
 @tailwind preflight;
 
-
 @tailwind components;
 
 @tailwind utilities;
@@ -14,8 +13,16 @@ body {
 
 .nav_bar {
     height: 75px;
-    background-color:#1F9D55;
+    background-color:#074810;
     position: relative;
+    color: white;
+}
+.navbarlinks{
+    text-decoration: none;
+    color:white;
+}
+.navbarlinks:hover{
+    color: orange;
 }
 
 .indexlinks{
