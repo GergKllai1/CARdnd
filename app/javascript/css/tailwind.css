@@ -33,3 +33,20 @@ body {
     background-color: #8795a1;
     color: white;
 }
+
+.profile img {
+    border-radius: 50%;
+    height: 100px;
+    width: 100px;
+}
+
+table {
+    border-collapse: collapse;
+    width: 100%;
+}
+  
+th, td {
+    padding: 8px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
